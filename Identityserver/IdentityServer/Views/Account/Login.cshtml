@@ -1,0 +1,30 @@
+﻿@model LoginViewModel
+
+<div class="row">
+    <div class="col-6 p-4">
+        <div class="card">
+            <div class="card-header">
+                Login
+            </div>
+            <partial name="_ValidationSummary" />
+            <div class="card-body">
+                <form asp-controller="account" asp-action="Login" method="Post">
+                    <input type="hidden" asp-for="ReturnUrl" />
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" asp-for="Username" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" asp-for="Password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn ">Login</button>
+                    <a asp-controller="Account" asp-action="Register" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-outline-primary">Register</a>
+                </form>
+            </div>
+        </div>
+    </div>
+            <div class="col-6">
+
+            </div>
+        </div>
